@@ -1,0 +1,6 @@
+{
+    "packages": ["numpy", "matplotlib", "pandas", "bokeh", "xyzservices"],
+    "files": {
+        "https://raw.githubusercontent.com/ageller/IntroToBokeh/main/PS_2021.10.05_11.19.37.csv": "./PS_2021.10.05_11.19.37.csv"
+    }
+}

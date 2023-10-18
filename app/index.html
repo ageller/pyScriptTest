@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>PyScript test</title>
+
+        <!-- Is all this really necessary??!! -->
+        <!-- And apparently this needs to match the python bokeh version (learned from console error) -->
+        <script
+            type="text/javascript"
+            src="https://cdn.bokeh.org/bokeh/release/bokeh-3.2.2.min.js"
+        ></script>
+        <script
+            type="text/javascript"
+            src="https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.2.2.min.js"
+        ></script>
+        <script
+            type="text/javascript"
+            src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.2.2.min.js"
+        ></script>
+        <script
+            type="text/javascript"
+            src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.2.2.min.js"
+        ></script>
+        <script
+            type="text/javascript"
+            src="https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-3.2.2.min.js"
+        ></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+
+        <!-- This doesn't work with the buttons but has a nice loading screen -->
+        <!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+        <script defer src="https://pyscript.net/latest/pyscript.js"></script> -->
+
+        <link rel="stylesheet" href="https://pyscript.net/snapshots/2023.09.1.RC2/core.css">
+        <script type="module" src="https://pyscript.net/snapshots/2023.09.1.RC2/core.js"></script>
+
+        <py-config type="json" src="pyscript.json"></py-config>
+        <script type="py" src="./main.py" config="./pyscript.json"></script>
+    </head>
+    <body>
+
+        <h1>Aaron Geller is testing PyScript</h1>
+        <p>Here's an input box that you can type words into.  When you click "count", Python will tell you the number of letters.</p>
+        <input type="text" id="input_text" placeholder="Type here..." />
+        <button py-click="count_letters" id="input_text_button">count</button>
+        <div id="count_letters_output"></div>
+
+        <p>Here's a dropdown menu to select an exponent.  When you click "plot", Python will plot a function with that exponent (y = x^exponent) using Matplotlib.</p>
+        <select name="exponent" id="exponent">
+            <option value="" disabled selected>Select the exponent</option>
+            <option value="0.5">0.5</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>    
+        <button py-click="plot_exponent">plot</button>
+        <div id="plot_exponent_output"></div>
+
+        <p>Here's a Bokeh interactive that I developed for my <a href = "https://github.com/ageller/IntroToBokeh/tree/main" target = "_blank">Intro to Bokeh workshop.</a> </p>
+        <div id="bokeh_output"></div>
+
+
+    </body>
+</html>
