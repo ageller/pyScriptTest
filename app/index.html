@@ -31,18 +31,22 @@
         </script>
 
         <!-- This doesn't work with the buttons but has a nice loading screen -->
-        <!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-        <script defer src="https://pyscript.net/latest/pyscript.js"></script> -->
+        <!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" /> -->
+        <!--<script defer src="https://pyscript.net/latest/pyscript.js"></script> -->
 
-        <link rel="stylesheet" href="https://pyscript.net/snapshots/2023.09.1.RC2/core.css">
+         <!-- This works with all the components but doesn't have a loading screen -->
+         <link rel="stylesheet" href="https://pyscript.net/snapshots/2023.09.1.RC2/core.css">
         <script type="module" src="https://pyscript.net/snapshots/2023.09.1.RC2/core.js"></script>
 
         <py-config type="json" src="pyscript.json"></py-config>
         <script type="py" src="./main.py" config="./pyscript.json"></script>
     </head>
     <body>
+        <div class="spinner"></div>
 
         <h1>Aaron Geller is testing PyScript</h1>
+        <h3>Please wait until the Bokeh plot appears at the bottom before clicking buttons.  (It is loading behind the scenes.)</h3>
+
         <p>Here's an input box that you can type words into.  When you click "count", Python will tell you the number of letters.</p>
         <input type="text" id="input_text" placeholder="Type here..." />
         <button py-click="count_letters" id="input_text_button">count</button>
